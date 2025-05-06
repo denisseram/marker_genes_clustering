@@ -7,7 +7,7 @@ scRNA-seq has transformed our understanding of cellular heterogeneity. A critica
 This project tests the hypothesis that selecting an appropriate subset of genes (marker genes) can enhance the clustering process by reducing noise, ultimately improving the identification of cell types.
 Repository Structure
 
-[methodology_marker_genes (1).pdf](https://github.com/user-attachments/files/20072015/methodology_marker_genes.1.pdf)
+![Image](https://github.com/user-attachments/assets/3399b9de-12fe-4f39-b247-5510a15637d7)
 
 ## Repository Structure
 .
