@@ -1,0 +1,40 @@
+# Single-Cell RNA-seq Clustering with Marker Gene Integration
+
+This repository contains the implementation of a comprehensive methodology to evaluate the impact of marker genes in improving clustering performance for single-cell RNA sequencing (scRNA-seq) data analysis.
+## Project Overview
+
+scRNA-seq has transformed our understanding of cellular heterogeneity. A critical step in analyzing scRNA-seq data is identifying distinct cell types through unsupervised clustering. However, the sparse and high-dimensional nature of scRNA-seq data poses significant challenges for accurate clustering.
+This project tests the hypothesis that selecting an appropriate subset of genes (marker genes) can enhance the clustering process by reducing noise, ultimately improving the identification of cell types.
+Repository Structure
+
+[methodology_marker_genes (1).pdf](https://github.com/user-attachments/files/20072015/methodology_marker_genes.1.pdf)
+
+## Repository Structure
+.
+├── data/
+│   └── sce/               # Single-cell experiment objects (RDS files)
+├── marker_genes/          # CSV files containing marker genes for human and mouse pancreas
+├── baron-mouse/           # Results for baron-mouse dataset
+│   ├── cidr/
+│   ├── raceid/
+│   ├── sc3/
+│   ├── seurat/
+│   ├── simlr/
+│   ├── sincera/
+│   └── tscan/
+├── baron-mouse_markergenes/ # Results for filtered baron-mouse dataset
+│   ├── ...                  # Same structure as above
+├── *.R                     # R scripts for clustering and analysis
+├── *.png                   # Result visualizations
+└── time.txt                # Runtime benchmarks
+
+## Clustering Algorithms
+Seven different clustering algorithms are implemented and evaluated:
+
+Seurat - A widely used R package for scRNA-seq analysis
+SC3 - Single-Cell Consensus Clustering
+CIDR - Clustering through Imputation and Dimensionality Reduction
+SINCERA - SINgle CEll RNA-seq profiling Analysis
+SIMLR - Single-cell Interpretation via Multi-kernel LeaRning
+TSCAN - Tools for Single-Cell ANalysis
+RaceID - Robust analysis of single-cell RNA-seq data
