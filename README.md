@@ -82,12 +82,13 @@ Rinstall.packages(c("data.table", "cidr", "SingleCellExperiment", "RaceID", "SC3
 
 Filter genes using marker genes:
 ```
-RRscript Filtering_by_markers.R
+Filtering_by_markers.R
 ```
 Run all clustering algorithms:
-
-RRscript principal.R
-
+```
+principal.R
+```
 Generate comparison plots:
-
-RRscript save_samesize.R
+```
+save_samesize.R
+```
