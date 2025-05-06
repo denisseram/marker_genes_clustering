@@ -43,8 +43,12 @@ Seurat - A widely used R package for scRNA-seq analysis
 SC3 - Single-Cell Consensus Clustering
 CIDR - Clustering through Imputation and Dimensionality Reduction
 SINCERA - SINgle CEll RNA-seq profiling Analysis
+SIMLR - Single-cell Interpretation via Multi-kernel LeaRning
+TSCAN - Tools for Single-Cell ANalysis
+RaceID - Robust analysis of single-cell RNA-seq data
 
 ## Repository Structure
+```
 .
 ├── data/
 │   └── sce/               # Single-cell experiment objects (RDS files)
@@ -62,26 +66,24 @@ SINCERA - SINgle CEll RNA-seq profiling Analysis
 ├── *.R                     # R scripts for clustering and analysis
 ├── *.png                   # Result visualizations
 └── time.txt                # Runtime benchmarks
+```
 
-SIMLR - Single-cell Interpretation via Multi-kernel LeaRning
-TSCAN - Tools for Single-Cell ANalysis
-RaceID - Robust analysis of single-cell RNA-seq data
 
 ## Usage
 ### Prerequisites
 
 
 Install required R packages:
-"""
+```
 Rinstall.packages(c("data.table", "cidr", "SingleCellExperiment", "RaceID", "SC3", "scater",
                    "SIMLR", "SINCERA", "dplyr", "ggplot2", "mclust", "aricode", "mcclust"))
-"""
+```
 ### Running the Analysis
 
 Filter genes using marker genes:
-
+```
 RRscript Filtering_by_markers.R
-
+```
 Run all clustering algorithms:
 
 RRscript principal.R
