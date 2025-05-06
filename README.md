@@ -5,9 +5,44 @@ This repository contains the implementation of a comprehensive methodology to ev
 
 scRNA-seq has transformed our understanding of cellular heterogeneity. A critical step in analyzing scRNA-seq data is identifying distinct cell types through unsupervised clustering. However, the sparse and high-dimensional nature of scRNA-seq data poses significant challenges for accurate clustering.
 This project tests the hypothesis that selecting an appropriate subset of genes (marker genes) can enhance the clustering process by reducing noise, ultimately improving the identification of cell types.
-Repository Structure
+
+## Methodology
 
 ![Image](https://github.com/user-attachments/assets/3399b9de-12fe-4f39-b247-5510a15637d7)
+
+### Data Preprocessing:
+
+Download and preprocess scRNA-seq dataset
+Obtain marker genes from Cell Marker and PanglaoDB databases
+
+
+### Feature Selection:
+
+Filter expression matrix to retain only marker genes
+Create a second dataset with these filtered features
+
+
+### Clustering:
+
+Apply seven clustering algorithms to both full and filtered datasets
+
+
+### Evaluation:
+
+Compare clustering performance using multiple metrics:
+
+Adjusted Rand Index (ARI)
+Adjusted Mutual Information (AMI)
+Variation of Information (VI)
+Number of clusters
+
+## Clustering Algorithms
+Seven different clustering algorithms are implemented and evaluated:
+
+Seurat - A widely used R package for scRNA-seq analysis
+SC3 - Single-Cell Consensus Clustering
+CIDR - Clustering through Imputation and Dimensionality Reduction
+SINCERA - SINgle CEll RNA-seq profiling Analysis
 
 ## Repository Structure
 .
@@ -28,13 +63,29 @@ Repository Structure
 ├── *.png                   # Result visualizations
 └── time.txt                # Runtime benchmarks
 
-## Clustering Algorithms
-Seven different clustering algorithms are implemented and evaluated:
-
-Seurat - A widely used R package for scRNA-seq analysis
-SC3 - Single-Cell Consensus Clustering
-CIDR - Clustering through Imputation and Dimensionality Reduction
-SINCERA - SINgle CEll RNA-seq profiling Analysis
 SIMLR - Single-cell Interpretation via Multi-kernel LeaRning
 TSCAN - Tools for Single-Cell ANalysis
 RaceID - Robust analysis of single-cell RNA-seq data
+
+## Usage
+### Prerequisites
+
+
+Install required R packages:
+"""
+Rinstall.packages(c("data.table", "cidr", "SingleCellExperiment", "RaceID", "SC3", "scater",
+                   "SIMLR", "SINCERA", "dplyr", "ggplot2", "mclust", "aricode", "mcclust"))
+"""
+### Running the Analysis
+
+Filter genes using marker genes:
+
+RRscript Filtering_by_markers.R
+
+Run all clustering algorithms:
+
+RRscript principal.R
+
+Generate comparison plots:
+
+RRscript save_samesize.R
